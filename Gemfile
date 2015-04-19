@@ -30,6 +30,8 @@ gem 'devise'
 
 gem 'mysql'
 
+gem 'pg'
+
 gem 'bootstrap-sass', '~> 3.3.4.1'
 
 gem 'autoprefixer-rails', '~> 5.1.9'
