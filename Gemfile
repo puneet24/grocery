@@ -31,6 +31,9 @@ gem 'devise'
 gem 'mysql'
 
 gem 'pg'
+gem 'rails_12factor', group: :production
+  gem 'unicorn'
+  gem 'rake'
 
 gem 'bootstrap-sass', '~> 3.3.4.1'
 
