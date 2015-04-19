@@ -1,0 +1,65 @@
+<style>
+.form-control{
+	width: 150;
+}
+</style>
+<br/><br/>
+<div class="container">
+<div class="well">
+<%= form_tag products_edit_path(@product.id), :method => :get, :class => "form-horizontal" do %>
+  <div class="form-group">
+    <label align="left" for="name" class="col-sm-2 control-label">Product Name</label>
+    <div class="col-sm-6">
+    <%if @disabled %>
+      <input  name="name" class="form-control" id="name" value="<%=@product.name%>" placeholder="Product name" disabled>
+    <%else%>
+    	<input  name="name" class="form-control" id="name" value="<%=@product.name%>" placeholder="Product name">
+    <%end%>
+    </div>
+  </div>
+  <div class="form-group">
+    <label align="left" for="quantity" class="col-sm-2 control-label">Quantity</label>
+    <div class="col-sm-6">
+    <%if @disabled %>
+      <input  type="number" name="quantity" class="form-control" id="quantity" value="<%=@product.quantity%>" placeholder="Quantity" disabled>
+     <%else%>
+     	<input  type="number" name="quantity" class="form-control" id="quantity" value="<%=@product.quantity%>" placeholder="Quantity">
+     <%end%>
+    </div>
+  </div>
+  <div class="form-group">
+    <label align="left" for="price" class="col-sm-2 control-label">Price</label>
+    <div class="col-sm-6">
+    <%if @disabled %>
+      <input  type="number" name="price" class="form-control" id="price" value="<%=@product.price%>" placeholder="Price in Rs.." disabled>
+    <%else%>
+    	<input  type="number" name="price" class="form-control" id="price" value="<%=@product.price%>" placeholder="Price in Rs..">
+    <%end%>
+    </div>
+  </div>
+  <div class="form-group">
+    <label align="left" for="desc" class="col-sm-2 control-label">Product Description</label>
+    <div class="col-sm-6">
+    <%if @disabled %>
+      <textarea class="form-control" name="desc"  rows="10" value="<%=@product.desc%>" placeholder="Product Description" disabled></textarea>
+    <%else%>
+    	<textarea class="form-control" name="desc"  rows="10" value="<%=@product.desc%>" id="desc" placeholder="Product Description"></textarea>
+    <%end%>
+    </div>
+  </div>
+  <%if !@disabled %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-primary">Edit Product</button>
+    </div>
+  </div>
+  <%end%>
+<%end%>
+</div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('#desc').html("<%=@product.desc%>");
+});
+</script>

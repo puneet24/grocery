@@ -1,0 +1,29 @@
+<br>
+<br>
+<div class="container">
+
+<% counter = 0 %>
+<% @products.each do |product| %>
+	<% if counter%4 == 0 %>
+		<% if counter != 0 %>
+			</div>
+		<% end %>
+		<div class="row">
+			<div class="col-sm-1"></div>
+	<% end %>
+	<a href="/products/view/<%=product.id%>">
+	<div class="col-sm-2 well">
+		<p><%=product.name%></p>
+		<p><%=product.price%></p>
+		<p><%=product.quantity%></p>
+		<p><%=product.desc%></p>
+		<% if !current_user.nil? && current_user.email != "a@b.com"%>
+		<center><%= link_to "Add to cart",carts_add_path(product.id),:class=>"btn btn-danger"%></center>
+		<%end%>
+	</div>
+	</a>
+	<div class="col-sm-1"></div>
+	<% counter += 1 %>
+<% end %>
+
+</div>

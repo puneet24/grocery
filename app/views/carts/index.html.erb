@@ -1,0 +1,37 @@
+<style>
+#content{
+    border: solid black; 
+    /*width: 70%;*/
+}
+
+#info{
+    border: solid red;   
+    width: 50%;
+}
+
+.close-image{
+    display: block;
+    float:right;
+    position:relative;
+    top:-10px;
+    right: -10px;
+    height: 20px;
+}
+</style>
+<br>
+<br>
+<div class="container">
+	<%@carts.each do |cart|%>
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 well" id="content">
+			<a href="/carts/delete/<%= cart.product_id%>"><img class="close-image" src="/assets/cross.png" /></a>
+			<% product = Product.find(cart.product_id)%>
+			<p><%= product.name%></p>
+			<p><b><%= cart.quantity%></b> Packets</p>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	<%end%>
+
+</div>

@@ -1,0 +1,42 @@
+<style>
+.form-control{
+	width: 150;
+}
+</style>
+<br/><br/>
+<div class="container">
+<div class="well">
+<%= form_tag products_add_path(), :method => :get, :class => "form-horizontal" do %>
+  <div class="form-group">
+    <label align="left" for="name" class="col-sm-2 control-label">Product Name</label>
+    <div class="col-sm-6">
+      <input  name="name" class="form-control" id="name" placeholder="Product name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label align="left" for="quantity" class="col-sm-2 control-label">Quantity</label>
+    <div class="col-sm-6">
+      <input  type="number" name="quantity" class="form-control" id="quantity" placeholder="Quantity">
+    </div>
+  </div>
+  <div class="form-group">
+    <label align="left" for="price" class="col-sm-2 control-label">Price</label>
+    <div class="col-sm-6">
+      <input  type="number" name="price" class="form-control" id="price" placeholder="Price in Rs..">
+    </div>
+  </div>
+  <div class="form-group">
+    <label align="left" for="desc" class="col-sm-2 control-label">Product Description</label>
+    <div class="col-sm-6">
+      <textarea class="form-control" name="desc"  rows="10" placeholder="Product Description"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-primary">Add Product</button>
+    </div>
+  </div>
+<%end%>
+</div>
+</div>
+
