@@ -38,4 +38,5 @@ class ProductsController < ApplicationController
 		product.save
 		redirect_to action: 'show'
 	end
+
 end

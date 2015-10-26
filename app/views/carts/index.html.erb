@@ -29,9 +29,13 @@
 			<% product = Product.find(cart.product_id)%>
 			<p><%= product.name%></p>
 			<p><b><%= cart.quantity%></b> Packets</p>
+			<p><b>Rs <%= cart.quantity*product.price %></b></p>
 			</div>
 			<div class="col-sm-1"></div>
 		</div>
 	<%end%>
-
+	<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4"><center><%= link_to "Order Now",carts_placeorder_path(),:method=>:get,:class=>"btn btn-danger"%></center></div>
+	<div class="col-md-4"></div>
 </div>

@@ -1,0 +1,21 @@
+<br>
+<br>
+<h1><center>Order NUmber : #<%= @order_id%></center></h1><br>
+<div class="container">
+	<%@all_product_items.each do |item|%>
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 well" id="content">
+			<% product = Product.find(item.product_id) %>
+			<p><%= product.name%></p>
+			<p><b><%= item.quantity%></b> Packets</p>
+			<p><b>Rs <%= item.quantity*product.price %></b></p>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	<%end%>
+	<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4"><center><%= link_to "View all Orders",orders_index_path(),:method=>:get,:class=>"btn btn-danger"%></center></div>
+	<div class="col-md-4"></div>
+</div>

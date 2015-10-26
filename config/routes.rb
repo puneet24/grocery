@@ -18,6 +18,11 @@ Rails.application.routes.draw do
    get 'carts/index' => 'carts#index', as: :carts_index
    get 'carts/add/:id' => 'carts#add', as: :carts_add
    get 'carts/delete/:id' => 'carts#delete', as: :carts_delete
+   get 'carts/placeorder' => 'carts#placeorder',as: :carts_placeorder
+
+   get 'orders/index' => 'orders#index', as: :orders_index
+   get 'orders/view/:id' => 'orders#view', as: :orders_view
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
